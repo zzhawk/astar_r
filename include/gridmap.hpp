@@ -1,6 +1,17 @@
+// Copyright 2023 watson.wang
+// https://github.com/zzhawk/
+
+#ifndef GRIDMAP_HPP_
+#define GRIDMAP_HPP_
 
 namespace gmp
 {
+	struct pose {
+		double x{};
+		double y{};
+		double t{};
+	};
+
 	struct grid {
 
 		explicit grid(double x, double y, double cost, bool obs) :
@@ -19,16 +30,16 @@ namespace gmp
 		bool obs = false;
 	};
 
-	struct occMap
-	{
+	struct occMap{
+
 		double width{};
 		double length{};
 		double resolution = 1.0;
-		double sx{};
-		double sy{};
-		double gx{};
-		double gy{};
+		pose s{};
+		pose g{};
 
 		std::vector<std::vector<grid>> grids;
 	};
 }
+
+#endif

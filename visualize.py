@@ -12,8 +12,8 @@ ymax = 0
 
 for grid in map:
     item = grid.split(',')
-    x = int(item[0])
-    y = int(item[1])
+    x = float(item[0])
+    y = float(item[1])
     xmin = min(xmin, x)
     xmax = max(xmax, x)
     ymin = min(ymin, y)
@@ -22,16 +22,16 @@ for grid in map:
 
 for sr in search:
     item = sr.split(',')
-    x = int(item[0])
-    y = int(item[1])
+    x = float(item[0])
+    y = float(item[1])
     plt.plot(x, y, "xb")
 
 pl_x = []
 pl_y = []
 for pl in plan:
     item = pl.split(',')
-    pl_x.append(int(item[0]))
-    pl_y.append(int(item[1]))
+    pl_x.append(float(item[0]))
+    pl_y.append(float(item[1]))
 plt.plot(np.asarray(pl_x), np.asarray(pl_y))
 
 
